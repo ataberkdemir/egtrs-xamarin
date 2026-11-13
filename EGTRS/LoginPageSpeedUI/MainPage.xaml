@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable="d"
+             x:Class="LoginPageSpeedUI.MainPage"
+             NavigationPage.HasNavigationBar="false">
+
+    <StackLayout BackgroundColor="#ddc58c">
+
+        <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+            <Frame HeightRequest="100" BackgroundColor="White" Padding="0" Margin="2">
+                <Image Source="logo.png" Aspect="AspectFill" Margin="0"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout Padding="0" Margin="10,15,10,0" HorizontalOptions="FillAndExpand">
+            <Frame  BackgroundColor="White" HeightRequest="800" HasShadow="True" Padding="0" Margin="0">
+
+                <StackLayout>
+
+
+                    <StackLayout Margin="10">
+                        <Label Text="Giriş Yapın" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                    </StackLayout>
+
+                    <StackLayout Padding="0" Margin="15,10">
+
+                        <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="#ddc58c" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                    <Image Source="kullanici.png" Aspect="AspectFill" Margin="0"/>
+                                </Frame>
+
+                                <Entry x:Name="txtsno" Placeholder="Sicil Numarası" TextColor="#161e2d" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="#ddc58c" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                    <Image Source="sifre.png" Aspect="AspectFill" Margin="0"/>
+                                </Frame>
+
+                                <Entry x:Name="txtsifre" Placeholder="Şifre" IsPassword="True" TextColor="#161e2d" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <StackLayout  Orientation="Horizontal">
+                            <CheckBox IsChecked="False" Color="#b47e00" />
+                            <Label Text="Beni Hatırla" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                            <Label Text="" TextColor="HotPink" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+
+                        </StackLayout>
+
+                        <Button Text="GİRİŞ YAP" BackgroundColor="#161e2d" TextColor="White" CornerRadius="30" Clicked="Button_Clicked"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Kayıtlı değil misininiz? " TextColor="DarkGray" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Label Text="İnsan Kaynaklarına başvurun!" TextColor="#161e2d" FontAttributes="Bold" FontSize="Small"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

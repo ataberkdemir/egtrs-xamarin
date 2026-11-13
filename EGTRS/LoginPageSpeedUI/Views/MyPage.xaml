@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginPageSpeedUI.Views.MyPage"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="#161e2d">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="20" BackgroundColor="#161e2d">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="150"/>
+                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Toplantı..." 
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand" 
+                   FontAttributes="Bold"
+                   FontSize="22"
+                   TextColor="White"
+                   Grid.ColumnSpan="2"/>
+               
+
+
+                <Frame Grid.Row="1"
+                   Margin="10,20"
+                   CornerRadius="15"
+                       BackgroundColor="#161e2d"
+                   Padding="1">
+                    <Image Source="goruntule"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnFrameTapped2" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Label Text="Görüntüle"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="End"
+                   TextColor="White"
+                   Grid.Row="1"/>
+
+                <Frame
+                    x:Name="frame" HasShadow="True" 
+                    Grid.Row="1"
+                   Grid.Column="2"
+                    BackgroundColor="#161e2d"
+                   Padding="7"
+                   CornerRadius="15"
+                   Margin="10,20">
+                    <Image Source="olustur"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnFrameTapped" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                
+                <Label Text="Oluştur"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="End"
+                   TextColor="White"
+                   Grid.Row="1"
+                   Grid.Column="2"/>
+                <Frame Grid.Row="1"
+                       BackgroundColor="#161e2d"
+                   Grid.Column="3"
+                   Padding="12"
+                   CornerRadius="15"
+                   Margin="10,20">
+                    <Image Source="duzenle"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnFrameTapped3" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Label Text="Düzenle"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="End"
+                   TextColor="White"
+                   Grid.Row="1"
+                   Grid.Column="3"/>
+
+
+                <Label Text="Ermetal Group Toplantı Randevu Sistemi" 
+                   HorizontalOptions="StartAndExpand" 
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   TextColor="White"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="4"
+                   Margin="0,10"/>
+                <Frame Grid.Row="3"
+                   Grid.ColumnSpan="4"
+                   Padding="0"
+                   CornerRadius="20"
+                   Margin="0">
+                    <BoxView Color="#202A3B" HeightRequest="180" />
+                </Frame>
+
+                <Label Text="EGTRS"
+                   HorizontalOptions="StartAndExpand" 
+                       VerticalOptions="EndAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="15"  
+                   TextColor="White"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="4"
+                   Margin="10,20"/>
+                <Image Source="blackClock"  HeightRequest="18"
+                     HorizontalOptions="StartAndExpand" 
+                       VerticalOptions="EndAndExpand"
+                      Grid.Row="3"
+                   Grid.ColumnSpan="4"
+                  Margin="10,5"/>
+
+                <Label Text="Version 1.0"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="EndAndExpand"
+                       TextColor="White"
+                   FontSize="13"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   Margin="30,5"/>
+
+                <Label Text="EGTRS Nedir ?" 
+                   HorizontalOptions="StartAndExpand" 
+                   FontAttributes="Bold"
+                   FontSize="22"
+                   TextColor="White"
+                   Grid.Row="4"
+                   Grid.ColumnSpan="2"
+                   Margin="0,20"/>
+                <Label Text="Açılım yukarıda yazdığı gibi Ermetal Group Toplantı Randevu Sistemi'dir. Müdür, şef gibi pozisyonlardakilerin, toplantı saati, toplantı günü hangi toplantı odasında olacağını belirleyerek oluşturduğu toplantının çalışanları tarafından gözükmesinin mobil uygulamasıdır."
+                   HorizontalOptions="EndAndExpand" 
+                   VerticalOptions="EndAndExpand"
+                   FontSize="13"
+                   TextColor="White"
+                   Grid.Row="4"
+                   Grid.ColumnSpan="4"
+                   Margin="0,50, 0, 10"/>
+               
+
+
+                <CollectionView ItemsSource="{Binding Musics}"  
+                            Grid.Row="5"
+                            Grid.ColumnSpan="4">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Horizontal">
+                        </GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame BackgroundColor="White" CornerRadius="10" Padding="0" Margin="15">
+                                    <StackLayout>
+                                        <Image Source="{Binding Photo}"
+                                               HeightRequest="80"
+                                            Aspect="AspectFill"  />
+                                        <Label Text="{Binding Name}"    
+                                           FontAttributes="Bold"
+                                               TextColor="White"
+                                               Margin="5,0"/>
+                                        <StackLayout Orientation="Horizontal" Margin="3,0">
+                                            <Image Source="blackClock"
+                                                   HeightRequest="20"/>
+                                            <Label Text="{Binding Lenght}" TextColor="White"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.GoToDetailPage, Source={x:Reference homePage}}"
+                                                      CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

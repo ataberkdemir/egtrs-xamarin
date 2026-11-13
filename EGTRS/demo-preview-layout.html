@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EGTRS — Kurgusal Demo Ekranları</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, Helvetica, sans-serif;
+      --navy: #191d2d;
+      --gold: #b48b14;
+      --blue: #1976c9;
+      --ink: #18202c;
+      --muted: #7b8590;
+      --line: #d9dee3;
+      --demo-bg: #fff6d9;
+      --demo-ink: #664b00;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #eef1f4; }
+    body { padding: 12px; }
+    .phone {
+      width: 350px;
+      padding: 10px;
+      border: 2px solid #34383d;
+      border-radius: 38px;
+      background: linear-gradient(145deg, #16181b, #303338 48%, #17191d);
+      box-shadow: 0 20px 45px rgba(23, 31, 43, .2), inset 0 0 0 2px #4c5054;
+    }
+    .screen {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 620px;
+      border-radius: 27px;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px #0c0c0d;
+    }
+    .status-bar {
+      display: flex;
+      height: 25px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 11px;
+      background: var(--blue);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .brand {
+      display: grid;
+      min-height: 78px;
+      place-items: center;
+      padding: 10px 15px;
+      border-bottom: 1px solid #eceff2;
+      background: #fff;
+    }
+    .brand img { display: block; width: 205px; max-height: 58px; object-fit: contain; }
+    .demo-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin: 13px 17px 9px;
+      padding: 8px 7px;
+      border: 1px solid #e6cb74;
+      border-radius: 4px;
+      background: var(--demo-bg);
+      color: var(--demo-ink);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-align: center;
+    }
+    .demo-dot { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: #c28d00; }
+    .content { flex: 1 0 auto; padding: 0 17px 20px; }
+    h1 { margin: 9px 0 17px; color: var(--ink); font-size: 18px; font-weight: 700; text-align: center; }
+    .field { margin: 0 0 12px; }
+    .field label { display: block; margin-bottom: 4px; color: #737b84; font-size: 10px; }
+    .field output { display: block; min-height: 36px; padding: 9px 10px; border: 1px solid #aeb6be; border-radius: 4px; background: #fff; color: var(--ink); font-size: 12px; line-height: 1.4; }
+    .field output.demo-value { border-color: #dfc46d; background: #fffdf4; }
+    .buttons { display: grid; gap: 9px; margin-top: 17px; }
+    .button { display: grid; min-height: 42px; place-items: center; border-radius: 24px; background: var(--navy); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .04em; }
+    .button.secondary { background: #4b5260; }
+    .record { margin: 0 0 10px; padding: 11px 11px 10px; border: 1px solid #dce1e6; border-left: 4px solid #d0a52c; border-radius: 6px; background: #fff; box-shadow: 0 4px 10px rgba(30, 40, 53, .045); }
+    .record-head { display: flex; justify-content: space-between; gap: 5px; margin-bottom: 8px; color: #6d7780; font-size: 8px; font-weight: 700; letter-spacing: .07em; }
+    .record-head strong { color: #8a6600; }
+    .record-row { display: grid; grid-template-columns: 67px 1fr; gap: 5px; margin-top: 5px; font-size: 9px; line-height: 1.35; }
+    .record-row span { color: #7e8790; }
+    .record-row b { color: #242c36; font-weight: 700; }
+    .detail-card { padding: 13px; border: 1px solid #e0e4e8; border-radius: 8px; background: #fff; box-shadow: 0 5px 16px rgba(29, 39, 52, .06); }
+    .detail-card .field { margin-bottom: 10px; }
+    .detail-card .field:last-child { margin-bottom: 0; }
+    .detail-card .field output { min-height: 34px; border-color: #e2e6e9; background: #fbfcfd; }
+    .demo-footer { margin: auto 17px 15px; padding-top: 9px; border-top: 1px dashed #dfc873; color: #78621e; font-size: 8px; font-weight: 700; letter-spacing: .04em; text-align: center; }
+    .nav-bar { display: flex; height: 35px; flex: 0 0 35px; align-items: center; justify-content: center; background: #111; }
+    .nav-bar span { width: 6px; height: 6px; border-radius: 50%; background: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <!-- Every person, employee number, and meeting record below is synthetic demo content. -->
+  <main>
+    <section class="phone" id="demo-login" aria-label="Demo giriş ekranı">
+      <div class="screen">
+        <div class="status-bar"><span>9:41</span><span>DEMO&nbsp; ▪ ▪ ▴</span></div>
+        <div class="brand"><img src="LoginPageSpeedUI.Android/Resources/drawable/logo.png" alt="Ermetal Group uygulama markası"></div>
+        <div class="demo-banner"><i class="demo-dot"></i> GÖRSEL DEMO · KURGUSAL VERİ</div>
+        <div class="content">
+          <h1>Giriş Yapın</h1>
+          <div class="field"><label>Sicil No · yalnızca demo</label><output class="demo-value">DEMO-0001</output></div>
+          <div class="field"><label>Şifre · örnek alan</label><output>••••••••</output></div>
+          <div class="buttons"><div class="button">GİRİŞ YAP</div></div>
+        </div>
+        <div class="demo-footer">BU EKRAN GÖRSEL ÖRNEKTİR · GERÇEK HESAP DEĞİLDİR</div>
+        <div class="nav-bar"><span></span></div>
+      </div>
+    </section>
+
+    <section class="phone" id="demo-create" aria-label="Kurgusal verilerle toplantı oluşturma ekranı">
+      <div class="screen">
+        <div class="status-bar"><span>9:41</span><span>DEMO&nbsp; ▪ ▪ ▴</span></div>
+        <div class="brand"><img src="LoginPageSpeedUI.Android/Resources/drawable/logo.png" alt="Ermetal Group uygulama markası"></div>
+        <div class="demo-banner"><i class="demo-dot"></i> GÖRSEL DEMO · KURGUSAL VERİ</div>
+        <div class="content">
+          <h1>Toplantı Oluştur</h1>
+          <div class="field"><label>Toplantı Bölümü</label><output class="demo-value">DEMO · Yazılım</output></div>
+          <div class="field"><label>Toplantıyı Oluşturan</label><output class="demo-value">Örnek Kullanıcı 01</output></div>
+          <div class="field"><label>Toplantı Konusu</label><output class="demo-value">Demo ürün değerlendirmesi</output></div>
+          <div class="field"><label>Toplantı Odası</label><output class="demo-value">DEMO-ODA-01</output></div>
+          <div class="buttons"><div class="button">OLUŞTUR</div><div class="button secondary">VAZGEÇ</div></div>
+        </div>
+        <div class="demo-footer">ÖRNEK EKRAN · KAYITLAR KURGUSALDIR</div>
+        <div class="nav-bar"><span></span></div>
+      </div>
+    </section>
+
+    <section class="phone" id="demo-list" aria-label="Üç kurgusal kayıtla toplantı listesi ekranı">
+      <div class="screen">
+        <div class="status-bar"><span>9:41</span><span>DEMO&nbsp; ▪ ▪ ▴</span></div>
+        <div class="brand"><img src="LoginPageSpeedUI.Android/Resources/drawable/logo.png" alt="Ermetal Group uygulama markası"></div>
+        <div class="demo-banner"><i class="demo-dot"></i> GÖRSEL DEMO · KURGUSAL VERİ</div>
+        <div class="content">
+          <h1>Oluşturulmuş Toplantılar</h1>
+          <article class="record">
+            <div class="record-head"><strong>ÖRNEK KAYIT 01</strong><span>DEMO</span></div>
+            <div class="record-row"><span>Bölüm</span><b>DEMO · Yazılım</b></div>
+            <div class="record-row"><span>Oluşturan</span><b>Örnek Kullanıcı 01</b></div>
+            <div class="record-row"><span>Konu</span><b>Mobil arayüz değerlendirmesi</b></div>
+          </article>
+          <article class="record">
+            <div class="record-head"><strong>ÖRNEK KAYIT 02</strong><span>DEMO</span></div>
+            <div class="record-row"><span>Bölüm</span><b>DEMO · Tasarım</b></div>
+            <div class="record-row"><span>Oluşturan</span><b>Örnek Kullanıcı 02</b></div>
+            <div class="record-row"><span>Konu</span><b>Uygulama akışı planlama</b></div>
+          </article>
+          <article class="record">
+            <div class="record-head"><strong>ÖRNEK KAYIT 03</strong><span>DEMO</span></div>
+            <div class="record-row"><span>Bölüm</span><b>DEMO · Test</b></div>
+            <div class="record-row"><span>Oluşturan</span><b>Örnek Kullanıcı 03</b></div>
+            <div class="record-row"><span>Konu</span><b>Örnek sürüm kontrolü</b></div>
+          </article>
+        </div>
+        <div class="demo-footer">TÜM TOPLANTI KAYITLARI KURGUSALDIR</div>
+        <div class="nav-bar"><span></span></div>
+      </div>
+    </section>
+
+    <section class="phone" id="demo-detail" aria-label="Kurgusal verilerle toplantı ayrıntısı ekranı">
+      <div class="screen">
+        <div class="status-bar"><span>9:41</span><span>DEMO&nbsp; ▪ ▪ ▴</span></div>
+        <div class="brand"><img src="LoginPageSpeedUI.Android/Resources/drawable/logo.png" alt="Ermetal Group uygulama markası"></div>
+        <div class="demo-banner"><i class="demo-dot"></i> GÖRSEL DEMO · KURGUSAL VERİ</div>
+        <div class="content">
+          <h1>Toplantı Detayı</h1>
+          <div class="detail-card">
+            <div class="record-head"><strong>ÖRNEK TOPLANTI 01</strong><span>DEMO</span></div>
+            <div class="field"><label>Toplantı Bölümü</label><output class="demo-value">DEMO · Yazılım</output></div>
+            <div class="field"><label>Toplantıyı Oluşturan</label><output class="demo-value">Örnek Kullanıcı 01</output></div>
+            <div class="field"><label>Toplantı Konusu</label><output class="demo-value">Mobil arayüz değerlendirmesi</output></div>
+            <div class="field"><label>Toplantı Odası</label><output class="demo-value">DEMO-ODA-01</output></div>
+          </div>
+        </div>
+        <div class="demo-footer">BU ÖRNEKTE GERÇEK KİŞİ / SİCİL VERİSİ YOKTUR</div>
+        <div class="nav-bar"><span></span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

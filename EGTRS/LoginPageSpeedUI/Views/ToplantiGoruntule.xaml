@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="LoginPageSpeedUI.Views.ToplantiGoruntule"
+              NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <Frame>
+                    <Image Source="logo"/>
+                </Frame>
+
+                <Label Text="Oluşturulmuş Toplantıları"
+                VerticalOptions="Fill" 
+                HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   TextColor="#161e2d"
+                   Margin="0.20"/>
+
+
+
+                <Grid RowDefinitions="Auto,Auto,Auto">
+
+                    <ListView Grid.Row="2" x:Name="MyListView" HasUnevenRows="True" Footer="">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid RowDefinitions="Auto,Auto,Auto" >
+                                        <Frame Grid.Row="1"
+                                               Grid.Column="1"
+                                             Margin="10,10"
+                                             CornerRadius="25"
+                                             HeightRequest="100"
+                                             BackgroundColor="#161e2d"
+                                             HasShadow = "true" 
+                                             Padding="30,15">
+                                            <StackLayout >
+
+                                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Top_Bolum}" TextColor="White" FontSize="Medium" FontAttributes="Bold" ></Label>
+                                                <Label Grid.Row="2" Grid.Column="2" Text="{Binding Top_Olusturan}" TextColor="White" FontSize="Medium" FontAttributes="Bold" ></Label>
+                                                <Label Grid.Row="3" Grid.Column="2" Text="{Binding Top_Konusu}" TextColor="White" FontSize="Medium" FontAttributes="Bold" ></Label>
+                                            </StackLayout>
+                                            <!--<Label Grid.Row="1" Text="{Binding Top_Bolum}" TextColor="White" FontSize="Medium" FontAttributes="Bold" ></Label>
+                                            <Label Grid.Row="2" Text="{Binding Top_Olusturan}" TextColor="White" FontSize="Medium" FontAttributes="Bold" ></Label>
+                                            <Label Grid.Row="3" Text="{Binding Top_Konusu}" TextColor="White" FontSize="Medium" FontAttributes="Bold" ></Label>-->
+                                            
+                                            
+                                            
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                                            </Frame.GestureRecognizers>
+                                        </Frame>
+                                        
+                                        
+                                            <Grid RowDefinitions="3">
+                                                <StackLayout>
+                                                    <Label Text="" TextColor="Black" FontSize="Default" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"  ></Label>
+                                                    <Label Text="" TextColor="Black" FontSize="Default" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"  ></Label>
+                                                    <Label Text="   Toplantı Bölümü :" TextColor="Black" FontSize="Medium" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"  ></Label>
+                                                    <Label Text="   Toplantı Oluşturan :" TextColor="Black" FontSize="Medium" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"  ></Label>
+                                                    <Label Text="   Toplantı Konusu : " TextColor="Black" FontSize="Medium" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"  ></Label>
+                                                </StackLayout>
+                                            </Grid>
+                                        
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                   
+                    
+                    <StackLayout Orientation="Vertical" Grid.Row="0">
+                        <!--<Entry Placeholder="Toplantı Oluşturan" x:Name="userTop_Olusturan"></Entry>
+                        <Entry Placeholder="Toplantı Konusu" x:Name="userTop_Konusu"></Entry>
+                        <Entry Placeholder="Toplantı Bölünü" x:Name="userTop_Bolum"></Entry>-->
+                    </StackLayout>
+                    <Grid Grid.Row="1">
+
+                        <!--<Button Grid.Row="0" Grid.Column="0" Text="Kontrol" BackgroundColor="Black" TextColor="White" Margin="20,20" CornerRadius="30" Clicked="Button_Clicked" ></Button>-->
+                        <Button Grid.Row="0" Text="Görüntüle" BackgroundColor="#161e2d" TextColor="White" Margin="20,10" CornerRadius="30" Clicked="Button_Clicked_1" ></Button>
+
+                    </Grid>
+                
+                
+                    <!--<ListView Grid.Row="2" x:Name="MyListView" HasUnevenRows="True" Footer="myTableLists">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid RowDefinitions="Auto,Auto,Auto">
+
+                                        <Label Grid.Row="1" Text="{Binding Top_Bolum}" TextColor="Black" ></Label>
+                                        <Label Grid.Row="2" Text="{Binding Top_Olusturan}" TextColor="Black" ></Label>
+                                        <Label Grid.Row="3" Text="{Binding Top_Konusu}" TextColor="Black" ></Label>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>-->
+                    
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

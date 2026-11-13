@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginPageSpeedUI.Views.AyrintiliGoruntule"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+            <Frame>
+                <Image Source="logo"/>
+            </Frame>
+            
+            <Label Text="TOPLANTININ DETAYLARINI" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand" TextDecorations="Underline" Margin="0,20" TextColor="Black"></Label>
+                <Button Text="Görüntüle" TextColor="White" WidthRequest="300" BackgroundColor="#161e2d" Clicked="Button_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Margin="0,5,0,10" CornerRadius="30" ></Button>
+
+
+                <!--<Label Text="Toplantıyı Oluşturan :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+            <Label Text="Toplantı Bölümü :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+            <Label Text="Toplantı Salonu :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+            <Label Text="Toplantının Günü :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+            <Label Text="Toplantı Başlangıç Saati :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+            <Label Text="Toplantı Bitiş Saati :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+            <Label Text="Toplantının Konusu :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+            <Label Text="Toplantıya Kimlerin Katılacağı :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+
+             <Button Text="Katılacağım" TextColor="White" BackgroundColor="#161e2d" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Margin="0,40,0,20" CornerRadius="30" ></Button>-->
+
+                <ListView Grid.Row="2" x:Name="MyListView" HasUnevenRows="True" Footer="">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid RowDefinitions="Auto,Auto,Auto" >
+                                    <Frame Grid.Row="1"
+                                               Grid.Column="1"
+                                             Margin="1,1"
+                                             CornerRadius="25"
+                                             HeightRequest="520"
+                                             BackgroundColor="#161e2d"
+                                             HasShadow = "true" 
+                                             Padding="10,15">
+                                        <StackLayout>
+
+                                     
+                                            <Label Grid.Row="2" Grid.Column="2" Text="{Binding Top_Olusturan}" TextColor="White" FontSize="Medium" FontAttributes="Bold" Padding="0,15" Margin="10,0" ></Label>
+                                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding Top_Bolum}" TextColor="White" FontSize="Medium" FontAttributes="Bold" Margin="5,5,0,10" ></Label>
+                                            <Label Grid.Row="3" Grid.Column="2" Text="{Binding Oda_Adi}" TextColor="White" FontSize="Medium" FontAttributes="Bold" Margin="5,5" ></Label>
+                                            <Label Grid.Row="3" Grid.Column="2" Text="{Binding Top_Konusu}" TextColor="White" FontSize="Medium" FontAttributes="Bold" Margin="5,2" ></Label>
+                                            
+                                           
+                                        </StackLayout>
+
+                                    </Frame>
+
+                                    <Grid RowDefinitions="3">
+                                        <StackLayout>
+                                            <Label Text=""  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,5" TextColor="Black" FontAttributes="Bold" ></Label>
+                                            <Label Text="Toplantıyı Oluşturan :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+                                            <Label Text="Toplantı Bölümü :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+                                            <Label Text="Toplantı Salonu :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+                                            <Label Text="Toplantının Günü :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+                                            <Label Text="Toplantı Başlangıç Saati :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+                                            <Label Text="Toplantı Bitiş Saati :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+                                            <Label Text="Toplantının Konusu :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+                                            <Label Text="Toplantıya Kimlerin Katılacağı :"  FontSize="16" HorizontalOptions="StartAndExpand" Margin="10,10" TextColor="Black" FontAttributes="Bold" ></Label>
+
+                                            <Button Text="Katılacağım" Grid.Row="3" TextColor="White" BackgroundColor="#161e2d" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Margin="0,15" CornerRadius="30" ></Button>
+
+                                        </StackLayout>
+                                    </Grid>
+
+
+                                    
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+           
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

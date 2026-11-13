@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LoginPageSpeedUI"
+             x:Class="LoginPageSpeedUI.Views.ToplantiOlusturmaSayfası"
+             NavigationPage.HasNavigationBar="false"
+             x:Name="ToplantiOlusturmaSayfasi">
+
+
+    
+    
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Frame>
+
+                    <Image Source="logo"/>
+                </Frame>
+                
+                
+                <Label Text="Toplantı Oluştur" TextColor="#161e2d" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+
+                <Grid RowDefinitions="Auto,Auto,Auto">
+                    <StackLayout Orientation="Vertical" Grid.Row="0">
+
+                        <Entry x:Name="ToplantiBolumu" Placeholder="Toplantı Bölümü" WidthRequest="150"></Entry>
+                        <Entry x:Name="ToplantiOlusturan" Placeholder="Toplantıyı Oluşturan" WidthRequest="150"></Entry>
+                        <Entry x:Name="ToplantiKonusu" Placeholder="Toplantı Konusu" WidthRequest="150"></Entry>
+                        <Entry x:Name="TopOda" Placeholder="Toplantı Odası" WidthRequest="150"></Entry>
+                            
+                       
+                        <!--<Entry x:Name="ToplantiGunu" Placeholder="Toplantı Günü" WidthRequest="150"></Entry>
+                        <Entry x:Name="ToplantiBaslangicSaati" Placeholder="Toplantı Başlangıç Saati" WidthRequest="150"></Entry>
+                        <Entry x:Name="ToplantiBitisSaati" Placeholder="Toplantı Bitiş Saati" WidthRequest="150"></Entry>
+                        <Entry x:Name="KimlerKatilacak" Placeholder="Toplantıya Kimlerin Davet Edildiği" WidthRequest="150"></Entry>-->
+         
+                        <!--<Picker Title="Toplantı Odası" x:Name="OdaAdi" >
+                            <Picker.Items>
+                                <x:String>Ar-Ge Toplantı Odası</x:String>
+                                <x:String>Bilgi İşlem Toplantı Odası</x:String>
+                                <x:String>Pazarlama Toplantı Odası</x:String>
+                                <x:String>Satın-Alma Toplantı Odası</x:String>
+                                <x:String>Toplanti Odasi 1</x:String>
+                                <x:String>Toplantı Odası 2</x:String>
+                                <x:String>Toplantı Odası 3</x:String>
+                            </Picker.Items>
+                        </Picker>-->
+                    
+
+                        <Button BackgroundColor="#161e2d" Grid.Row="1" Grid.Column="1" WidthRequest="150" CornerRadius="30" Margin="0,10" TextColor="White" Padding="0,10" x:Name="setButton" Clicked="setButton_Clicked" Text="Oluştur"/>
+                        <Button BackgroundColor="#161e2d" Grid.Row="1" Grid.Column="2" WidthRequest="150" CornerRadius="30" TextColor="White" Padding="0,7" Clicked="Button_Clicked" Text="Vazgeç"/>
+                        
+
+                    </StackLayout>
+                </Grid>
+
+
+                <!--<Entry x:Name="ToplantiBolumu" Placeholder="Toplantı Bölümü" WidthRequest="150"></Entry>
+                <Entry x:Name="ToplantiOlusturan" Placeholder="Toplantıyı Oluşturan" WidthRequest="150"></Entry>
+                <Entry x:Name="ToplantiKonusu" Placeholder="Toplantı Konusu" WidthRequest="150"></Entry>
+                <Entry x:Name="ToplantininYapilacagiYer" Placeholder="Toplantı Odası" WidthRequest="150"></Entry>
+                <Entry x:Name="ToplantiGunu" Placeholder="Toplantı Günü" WidthRequest="150"></Entry>
+                <Entry x:Name="ToplantiBaslangicSaati" Placeholder="Toplantı Başlangıç Saati" WidthRequest="150"></Entry>
+                <Entry x:Name="ToplantiBitisSaati" Placeholder="Toplantı Bitiş Saati" WidthRequest="150"></Entry>
+                <Entry x:Name="KimlerKatilacak" Placeholder="Toplantıya Kimlerin Davet Edildiği" WidthRequest="150"></Entry>-->
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Günlerden..." FontSize="20" TextColor="#161e2d" VerticalOptions="End"
+                           Padding="0,0,0,6"/>
+                    <DatePicker x:Name="Date"/>
+                </StackLayout>
+
+
+
+                <ListView Grid.Row="2" x:Name="MyListView" HasUnevenRows="True" Footer="">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto,Auto">
+                                    
+                                    
+                                    
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+
+                <!--<Grid RowDefinitions="Auto,Auto,Auto">
+                    <StackLayout Orientation="Horizontal">
+                        <Button BackgroundColor="#161e2d" Grid.Row="1" Grid.Column="2" WidthRequest="150" CornerRadius="30" TextColor="White" Padding="0,7"  Clicked="Button_Clicked" Text="Vazgeç"/>
+                        <Button BackgroundColor="#161e2d" Grid.Row="1" Grid.Column="1" WidthRequest="150" CornerRadius="30" TextColor="White" Padding="0,1"   x:Name="setButton" Clicked="setButton_Clicked" Text="Oluştur"/>
+                    </StackLayout>
+                </Grid>-->
+                <!--<StackLayout Orientation="Horizontal">
+                    <Button BackgroundColor="#161e2d" Grid.Row="2" Grid.Column="2" WidthRequest="150" CornerRadius="30" TextColor="White" Padding="0,7"  Clicked="Button_Clicked" Text="Vazgeç"/>
+                    <Button BackgroundColor="#161e2d" Grid.Row="2" Grid.Column="1" WidthRequest="150" CornerRadius="30" TextColor="White" Padding="0,1"   x:Name="setButton" Clicked="setButton_Clicked" Text="Oluştur"/>
+                </StackLayout>-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
