@@ -26,7 +26,7 @@ Projeden seçilmiş uygulama ve geliştirme görüntüleri:
 
 | Toplantı ayrıntısı | Toplantı formu |
 |---|---|
-| ![Toplantı ayrıntısı ekranı](screenshots/demo-detail.png) | ![Mobil toplantı formu](screenshots/meeting-create.webp) |
+| ![Toplantı ayrıntısı ekranı](screenshots/demo-detail.png) | 
 
 ![Toplantı oluşturma akışı ve geliştirme ortamı](screenshots/Toplanti_Olusturuken.png)
 
