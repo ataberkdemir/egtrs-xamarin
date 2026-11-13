@@ -24,7 +24,7 @@ Projeden seçilmiş uygulama ve geliştirme görüntüleri:
 |---|---|---|
 | ![Giriş ekranı](screenshots/demo-login.png) | ![Toplantı oluşturma ekranı](screenshots/demo-create.png) | ![Toplantı listesi ekranı](screenshots/demo-list.png) |
 
-| Toplantı ayrıntısı | Toplantı formu |
+| Toplantı ayrıntısı |
 |---|---|
 | ![Toplantı ayrıntısı ekranı](screenshots/demo-detail.png) | 
 
